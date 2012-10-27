@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package phonebook.pkg2;
+package keyvaluestorage;
 
 /**
  *
@@ -13,7 +13,8 @@ public class Record {
     private String number;
     
     public Record(String name, String number) {
-        
+        this.name = name;
+        this.number = number;
     }
 
     public void display(){
