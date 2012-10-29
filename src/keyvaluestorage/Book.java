@@ -4,6 +4,12 @@
  */
 package keyvaluestorage;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +60,23 @@ public class Book {
         for (int index = 0; index < book.size(); index++){
             System.out.println(book.get(index).getName()+" "+
                     book.get(index).getNumber());
+        }
+    }
+    
+    public int Size(){
+        return book.size();
+    }
+    
+    public void Commit(){
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter("C:\\file.txt"));
+            for (int index = 0; index < book.size(); index++){
+                out.append(book.get(index).getName()+"\t" + book.get(index).getNumber());
+                out.newLine();
+            }
+            out.close();
+        } catch (IOException ex) {
+            System.out.println("Error "+ex.getMessage());
         }
     }
     

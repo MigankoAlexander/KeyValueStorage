@@ -4,6 +4,9 @@
  */
 package keyvaluestorage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -32,5 +35,8 @@ public class Execution {
 
     public static void displayBook() {
         book.Display();
+    }
+    public static void Commit(){
+        book.Commit();
     }
 }
